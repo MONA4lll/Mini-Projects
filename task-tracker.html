@@ -49,19 +49,19 @@
 <body>
   <h1>Task Tracker Report</h1>
   <div class="grid-container">
-    <!-- Input and Add Button -->
+    
     <div class="input-container">
       <input type="text" id="taskInput" placeholder="Enter a task">
       <button onclick="addTask()">Add Task</button>
     </div>
-    <!-- Delete Section -->
+    
     <div>
       <select id="deleteTaskDropdown">
         <option value="">Select a task to delete</option>
       </select>
       <button onclick="deleteTask()">Delete</button>
     </div>
-    <!-- Update Section -->
+    
     <div>
       <select id="updateTaskDropdown">
         <option value="">Select a task to update</option>
@@ -69,7 +69,7 @@
       <button onclick="updateTask()">Update</button>
     </div>
   </div>
-  <!-- Chart Section -->
+  
   <div id="chart">
     <canvas id="taskChart" width="400" height="200"></canvas>
   </div>
