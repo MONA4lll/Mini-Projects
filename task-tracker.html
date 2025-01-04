@@ -3,30 +3,77 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Action Tracker</title>
+  <title>Task Tracker Report</title>
   <style>
     body {
       font-family: Arial, sans-serif;
+      margin: 20px;
+      padding: 0;
+    }
+    h1 {
       text-align: center;
-      margin: 50px;
+      margin-bottom: 20px;
+    }
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 20px;
+    }
+    .input-container {
+      grid-column: span 2;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+    input[type="text"] {
+      padding: 10px;
+      font-size: 1rem;
+      width: 70%;
     }
     button {
       padding: 10px 20px;
-      font-size: 18px;
+      font-size: 1rem;
       cursor: pointer;
     }
-    .tracker {
-      margin-top: 20px;
-      font-size: 20px;
-      font-weight: bold;
+    select {
+      padding: 10px;
+      font-size: 1rem;
+      width: 70%;
+    }
+    #chart {
+      margin-top: 30px;
+      text-align: center;
     }
   </style>
 </head>
 <body>
-  <h1>Action Tracker</h1>
-  <button id="trackButton">Click Me!</button>
-  <div class="tracker">Clicks: <span id="clickCount">0</span></div>
-
+  <h1>Task Tracker Report</h1>
+  <div class="grid-container">
+    <!-- Input and Add Button -->
+    <div class="input-container">
+      <input type="text" id="taskInput" placeholder="Enter a task">
+      <button onclick="addTask()">Add Task</button>
+    </div>
+    <!-- Delete Section -->
+    <div>
+      <select id="deleteTaskDropdown">
+        <option value="">Select a task to delete</option>
+      </select>
+      <button onclick="deleteTask()">Delete</button>
+    </div>
+    <!-- Update Section -->
+    <div>
+      <select id="updateTaskDropdown">
+        <option value="">Select a task to update</option>
+      </select>
+      <button onclick="updateTask()">Update</button>
+    </div>
+  </div>
+  <!-- Chart Section -->
+  <div id="chart">
+    <canvas id="taskChart" width="400" height="200"></canvas>
+  </div>
   <script src="JS-tasktracker.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 </html>
