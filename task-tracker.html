@@ -3,9 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My First HTML File</title>
+  <title>Action Tracker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+    .tracker {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
-  <h1>Hello, GitHub!</h1>
+  <h1>Action Tracker</h1>
+  <button id="trackButton">Click Me!</button>
+  <div class="tracker">Clicks: <span id="clickCount">0</span></div>
+
+  <script src="script.js"></script>
 </body>
 </html>
